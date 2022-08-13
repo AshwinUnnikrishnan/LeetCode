@@ -7,7 +7,7 @@ class Solution:
                 big = prices[i]
                 if (big - small) > diff:
                     diff = big - small
-            if prices[i] < small:
+            elif prices[i] < small:
                 small = prices[i]
                 big = prices[i]
             print(big, small)
