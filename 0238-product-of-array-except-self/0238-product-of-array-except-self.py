@@ -1,7 +1,10 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         
-        integer_map = {key: 0 for key in range(-30, 31)}
+        min_value = min(nums)
+        max_value = max(nums)
+        
+        integer_map = {key: 0 for key in range(min_value, max_value+1)}
         
         n = len(nums)
         result = [0] * n
@@ -15,7 +18,7 @@ class Solution:
             
             value = 1
             
-            for j in range(-30,31):
+            for j in range(min_value, max_value+1):
                 
                 if j == nums[i]:
                     same_value_flag = True
