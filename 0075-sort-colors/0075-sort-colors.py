@@ -6,7 +6,6 @@ class Solution:
         buc = [0] *3
         for i in nums:
             buc[i] += 1
-        print(buc)
         j = 0
         for i in range(len(nums)):
             while buc[j] == 0:
