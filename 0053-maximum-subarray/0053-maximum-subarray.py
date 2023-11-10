@@ -4,15 +4,15 @@ class Solution:
         n = len(nums)
         dp = [0] * n
         dp[0] = nums[0]
-        
-        max_value = dp[0]
-        
-        for i in range(1,n):
+        sumM = dp[0]
+        for i in range(1, n):
+            sumTerm = 0
+            if dp[i-1] > 0:
+                sumTerm = dp[i-1]
+            dp[i] = nums[i] + sumTerm
             
-            if dp[i-1] < 0:
-                dp[i] = nums[i]
-            else:
-                dp[i] = dp[i-1] + nums[i]
-            if dp[i] > max_value:
-                max_value = dp[i]
-        return max_value
+            sumM = max(sumM, dp[i])
+        return sumM
+            
+            
+        
