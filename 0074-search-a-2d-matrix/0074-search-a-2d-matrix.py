@@ -24,7 +24,7 @@ class Solution:
 
             mid = (left+right)//2
             
-            if matrix[mid][0] <= target and target<= matrix[mid][len(matrix[mid])-1]:
+            if matrix[mid][0] <= target <= matrix[mid][-1]:
                 return binarySearch(matrix[mid], target)
             elif matrix[mid][0] > target:
                 right = mid - 1
