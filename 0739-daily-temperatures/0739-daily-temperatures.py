@@ -26,10 +26,9 @@ class Solution:
                     v = stack.pop()
                     popCount += v[1]
 
-                if len(stack) == 0:
+                if len(stack) != 0:
                     
-                    continue
-                else:
+                    
                     stack.append((temperatures[i], popCount + 1))
                     result[i] = popCount + 1
                     i -= 1
