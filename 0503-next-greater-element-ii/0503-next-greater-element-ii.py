@@ -20,14 +20,11 @@ class Solution:
                 while len(st) != 0 and st[-1] <= nums[n]:
                     st.pop()
         n = len(nums)-1
-        print(st)
-        print("ASD")
         while len(st) != 0:
             while len(st) != 0 and st[-1] <= nums[n]:
                     st.pop()
             if len(st) == 0:
                 break
-            print(st)
 
             res[n] = st[-1]
             st.append(nums[n])
