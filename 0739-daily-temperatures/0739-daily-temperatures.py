@@ -27,9 +27,7 @@ class Solution:
                     popCount += v[1]
 
                 if len(stack) == 0:
-                    stack.append((temperatures[i], 0))
-                    result[i] = 0  # Set value to 0 when stack is empty
-                    i -= 1  # Decrement i inside this block as well
+                    
                     continue
                 else:
                     stack.append((temperatures[i], popCount + 1))
