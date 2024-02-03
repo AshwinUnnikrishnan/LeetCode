@@ -18,24 +18,18 @@ class Solution:
             
             if len(stack) == 0:
                 stack.append([functionID, timeStamp])
-                i += 1
             else:
                 
                 if start:
                     currentStackTopFunctionId = stack[-1][0]
                     func[currentStackTopFunctionId] += timeStamp - stack[-1][1]
                     stack.append([functionID, timeStamp])
-                    i += 1
                 else:
                     currentStackTopFunctionId = stack[-1][0]
-
                     func[currentStackTopFunctionId] += timeStamp - stack[-1][1] + 1
                     stack.pop()
                     if len(stack)!= 0:
-                        stack[-1][1] = timeStamp+1
-
-                    
-                    i += 1
-            print(func)
+                        stack[-1][1] = timeStamp+1                    
+            i += 1
         return func
         
