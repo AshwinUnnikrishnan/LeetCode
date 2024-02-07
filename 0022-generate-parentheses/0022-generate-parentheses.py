@@ -5,7 +5,6 @@ class Solution:
         def getCombinations(oBCount, cBCount, current, result, n):
             
             if oBCount == n and cBCount == n:
-                print(current)
                 result.append(current)
             
             if oBCount < n:
