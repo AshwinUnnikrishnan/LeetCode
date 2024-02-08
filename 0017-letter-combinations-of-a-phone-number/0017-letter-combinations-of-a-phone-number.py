@@ -9,13 +9,8 @@ class Solution:
             if i == n:
                 result.append(curr)
                 return
-            print(digit)
-            print(result)
-            print(curr)
             strV = mainDict[digit[0]]
-            print('strV')
             for k in range(len(strV)):
-                print(digit[1:])
                 dfs(result, curr+strV[k], digit[1:],i+1, n)
         result = []
         dfs(result, "", digits, 0, len(digits))
