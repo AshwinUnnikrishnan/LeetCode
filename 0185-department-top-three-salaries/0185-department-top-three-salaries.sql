@@ -7,12 +7,9 @@ FROM
 INNER JOIN 
     Department d 
         ON e.departmentId = d.id
-WHERE 
-   NOT EXISTS (
-        SELECT 1
-        FROM Employee e2
-        WHERE e2.departmentId = e.departmentId
-        AND e2.salary > e.salary
-        GROUP BY e2.departmentId
-        HAVING COUNT(DISTINCT e2.salary) >= 3
-    );
+LEFT JOIN
+    Employee e2 ON e.departmentId = e2.departmentId AND e.salary < e2.salary
+GROUP BY
+    e.id
+HAVING 
+    COUNT(DISTINCT e2.salary) < 3 OR COUNT(DISTINCT e2.salary) IS NULL;
