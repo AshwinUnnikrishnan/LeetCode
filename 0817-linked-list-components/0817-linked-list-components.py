@@ -8,23 +8,23 @@ class Solution:
         
         temp = head
         count = 0
-        len_list = 0
-        while temp:
-            temp = temp.next
-            len_list +=1
+        #len_list = 0
+        #while temp:
+        #    temp = temp.next
+        #    len_list +=1
         
-        temp = head
+        #temp = head
         
         
-        dictV = [True if v in nums else False for v in range(len_list) ]
+        #dictV = [True if v in nums else False for v in range(len_list) ]
 
         while(temp):
             flag = False
-            while temp and dictV[temp.val]:
+            while temp and temp.val in nums:
                 nums.remove(temp.val)
                 temp = temp.next
                 flag = True
-            if temp and not dictV[temp.val]:
+            if temp and temp.val not in nums:
                 temp = temp.next
             if flag:
                 count += 1
